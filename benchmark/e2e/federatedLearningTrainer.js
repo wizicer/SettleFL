@@ -472,7 +472,7 @@ class FederatedLearningTrainer {
         error.message
       );
 
-      this.log("error", `Error in local training for participant ${participantId + 1}`, error);
+      this.log("error", `Error in local training for participant ${participantId + 1}`, error.message || error);
       throw error;
     }
   }

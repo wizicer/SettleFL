@@ -109,6 +109,23 @@ npm run test:challenge-counter -- --network sepolia
 
 ```
 
+## FAQ
+
+**Q: My test fails with a generic error like `❌ Test failed: Error: X training tasks failed` during local training. What should I do?**
+
+**A:**
+When verbose logging is disabled, the system might mask the actual underlying error. If you are running this on a new machine or a recently updated environment, this is highly likely caused by an incompatible Node.js version.
+
+**How to confirm:**
+Enable verbose mode or check your detailed logs via `--log-level debug`. If you spot the following error:
+`TypeError: (0 , util_1.isNullOrUndefined) is not a function`
+
+**The Core Reason:**
+Your Node.js version is too new (v23 or higher). The underlying `@tensorflow/tfjs-node` library relies on a legacy Node.js built-in function called `util.isNullOrUndefined`. This function was completely removed starting from Node.js v23, causing the training tasks to crash silently.
+
+**The Solution:**
+You need to downgrade your Node.js to a stable LTS (Long Term Support) version. We highly recommend **Node.js v22**.
+
 ## Citation
 
 If you find this project or our paper interesting, please consider citing our extended version on arXiv:
