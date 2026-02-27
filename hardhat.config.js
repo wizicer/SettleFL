@@ -11,6 +11,7 @@ module.exports = {
   },
   networks: {
     hardhat: {
+      initialBaseFeePerGas: 0,
       chainId: 1337,
       allowUnlimitedContractSize: true,
       mining: {
