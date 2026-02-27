@@ -49,13 +49,22 @@ The pre-compiled circuits in this build are constrained to the following paramet
 npm install
 ```
 
-**2. Start a local Hardhat blockchain** *(Run this in a separate terminal)*
+**2. Configure Environment Variables**
+Copy the example environment file to create your local `.env` configuration:
+
+```bash
+cp .env.example .env
+```
+
+*(By default, this file contains well-known test accounts for the local Hardhat network. If you intend to run tests on the Sepolia public testnet, please refer to the "Network Selection" section below).*
+
+**3. Start a local Hardhat blockchain** *(Run this in a separate terminal)*
 
 ```bash
 npm run chain
 ```
 
-**3. Run the SettleFL-CC (Commit-and-Challenge) Test**
+**4. Run the SettleFL-CC (Commit-and-Challenge) Test**
 
 ```bash
 npm run test:challenge-counter
@@ -63,7 +72,7 @@ npm run test:challenge-counter
 
 *This executes a 5-participant, 3-round FL job using the optimistic protocol. It simulates local training, aggregator commitments, a malicious challenge, an honest counter-proof generation, and final ZK-verified reward distribution.*
 
-**4. Run the SettleFL-CP (Commit-with-Proof) Test**
+**5. Run the SettleFL-CP (Commit-with-Proof) Test**
 
 ```bash
 npm run test:commit-proof
@@ -79,6 +88,19 @@ You can override the default test simulation parameters (ensure you do not excee
 npm run test:real -- --participants 3 --rounds 2 --max-participants 10 --max-rounds 10 --payout-batch-size 10
 ```
 
+## Network Selection (Local vs. Sepolia)
+
+By default, the testing harness executes on a local Hardhat node using the pre-funded accounts specified in your `.env` file. We also fully support executing these workflows on the public **Ethereum Sepolia testnet**.
+
+To evaluate the protocol on Sepolia:
+
+1. Open your `.env` file.
+2. Replace the values for `OWNER_PRIVATE_KEY_sepolia` and `CHALLENGER_PRIVATE_KEY_sepolia` with your own actual private keys. **Ensure these accounts are funded with Sepolia test ETH.**
+3. Append the `--network sepolia` flag to your test commands. For example:
+```bash
+npm run test:challenge-counter -- --network sepolia
+
+```
 
 ## Citation
 
