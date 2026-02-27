@@ -4,6 +4,7 @@
   "description": "Disclosure build of ZKCCFL - demonstrates end-to-end ZK federated learning protocol using pre-compiled circuit and contract artifacts",
   "scripts": {
     "chain": "hardhat node",
+    "download:mnist": "node scripts/download_mnist.js",
     "test:real": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js",
     "test:challenge-counter": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js --participants 5 --rounds 3 --max-participants 10 --max-rounds 10 --payout-batch-size 10 --epochs 1",
     "test:commit-proof": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js --participants 5 --rounds 3 --max-participants 10 --max-rounds 10 --payout-batch-size 10 --commit-mode --epochs 1"

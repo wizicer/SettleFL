@@ -58,21 +58,28 @@ cp .env.example .env
 
 *(By default, this file contains well-known test accounts for the local Hardhat network. If you intend to run tests on the Sepolia public testnet, please refer to the "Network Selection" section below).*
 
-**3. Start a local Hardhat blockchain** *(Run this in a separate terminal)*
+**3. Download the Dataset**
+Before running the training simulation, you must download the MNIST dataset, which serves as the main benchmark for our end-to-end evaluation:
+
+```bash
+npm run download:mnist
+```
+
+**4. Start a local Hardhat blockchain** *(Run this in a separate terminal)*
 
 ```bash
 npm run chain
 ```
 
-**4. Run the SettleFL-CC (Commit-and-Challenge) Test**
+**5. Run the SettleFL-CC (Commit-and-Challenge) Test**
 
 ```bash
 npm run test:challenge-counter
 ```
 
-*This executes a 5-participant, 3-round FL job using the optimistic protocol. It simulates local training, aggregator commitments, a malicious challenge, an honest counter-proof generation, and final ZK-verified reward distribution.*
+*This executes a 5-participant, 3-round FL job on the MNIST dataset using the optimistic protocol. It simulates local training, aggregator commitments, a malicious challenge, an honest counter-proof generation, and final ZK-verified reward distribution.*
 
-**5. Run the SettleFL-CP (Commit-with-Proof) Test**
+**6. Run the SettleFL-CP (Commit-with-Proof) Test**
 
 ```bash
 npm run test:commit-proof
