@@ -1,0 +1,15 @@
+{
+  "participants": 10,
+  "rounds": 10,
+  "chunkSize": 16,
+  "batchSize": 10,
+  "circuitType": "redeemMultiShot",
+  "circuitId": "10_10_16_10",
+  "constraints": 12864,
+  "wires": 25547,
+  "templateInstances": 410,
+  "publicInputs": 2,
+  "privateInputs": 116,
+  "publicOutputs": 22,
+  "timestamp": "2025-12-13T07:42:58.939Z"
+}

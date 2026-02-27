@@ -1,0 +1,22 @@
+{
+  "name": "zkccfl-disclosure",
+  "version": "1.0.0",
+  "description": "Disclosure build of ZKCCFL - demonstrates end-to-end ZK federated learning protocol using pre-compiled circuit and contract artifacts",
+  "scripts": {
+    "chain": "hardhat node",
+    "test:real": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js",
+    "test:challenge-counter": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js --participants 5 --rounds 3 --max-participants 10 --max-rounds 10 --payout-batch-size 10 --epochs 1",
+    "test:commit-proof": "cross-env NODE_OPTIONS=--max-old-space-size=409600 node benchmark/e2e/flzkpRewardRealTest.js --participants 5 --rounds 3 --max-participants 10 --max-rounds 10 --payout-batch-size 10 --commit-mode --epochs 1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "circomlibjs": "^0.1.7",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.6.1",
+    "ethers": "^6.0.0",
+    "hardhat": "^2.19.0",
+    "snarkjs": "^0.7.5"
+  }
+}

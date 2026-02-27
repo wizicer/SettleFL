@@ -1,0 +1,15 @@
+{
+  "participants": 10,
+  "rounds": 10,
+  "chunkSize": 16,
+  "batchSize": 10,
+  "circuitType": "counter",
+  "circuitId": "10_10_16_10",
+  "constraints": 25277,
+  "wires": 50381,
+  "templateInstances": 408,
+  "publicInputs": 1,
+  "privateInputs": 120,
+  "publicOutputs": 3,
+  "timestamp": "2025-12-13T07:42:00.766Z"
+}
