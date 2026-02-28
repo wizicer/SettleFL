@@ -11,7 +11,7 @@ HARDHAT_PID=$!
 sleep 3
 
 echo "Running commit-with-proof test..."
-npm run test:commit-proof || true
+npm run test:cp || true
 
 echo "Stopping Hardhat node..."
 kill $HARDHAT_PID 2>/dev/null || true

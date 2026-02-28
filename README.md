@@ -74,7 +74,7 @@ npm run chain
 **5. Run the SettleFL-CC (Commit-and-Challenge) Test**
 
 ```bash
-npm run test:challenge-counter
+npm run test:cc
 ```
 
 *This executes a 5-participant, 3-round FL job on the MNIST dataset using the optimistic protocol. It simulates local training, aggregator commitments, a malicious challenge, an honest counter-proof generation, and final ZK-verified reward distribution.*
@@ -82,7 +82,7 @@ npm run test:challenge-counter
 **6. Run the SettleFL-CP (Commit-with-Proof) Test**
 
 ```bash
-npm run test:commit-proof
+npm run test:cp
 ```
 
 *This executes the validity-proof protocol. Every commit round will automatically generate and verify a ZK proof on-chain, proving state transition validity instantly without a challenge phase.*
@@ -105,7 +105,7 @@ To evaluate the protocol on Sepolia:
 2. Replace the values for `OWNER_PRIVATE_KEY_sepolia` and `CHALLENGER_PRIVATE_KEY_sepolia` with your own actual private keys. **Ensure these accounts are funded with Sepolia test ETH.**
 3. Append the `--network sepolia` flag to your test commands. For example:
 ```bash
-npm run test:challenge-counter -- --network sepolia
+npm run test:cc -- --network sepolia
 
 ```
 

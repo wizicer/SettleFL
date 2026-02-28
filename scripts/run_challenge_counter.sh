@@ -11,7 +11,7 @@ HARDHAT_PID=$!
 sleep 3
 
 echo "Running challenge-and-counter test..."
-npm run test:challenge-counter || true
+npm run test:cc || true
 
 echo "Stopping Hardhat node..."
 kill $HARDHAT_PID 2>/dev/null || true
